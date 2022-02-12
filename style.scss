@@ -1,0 +1,262 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Bellefair;
+  src: url('./assets/fonts/Bellefair/Bellefair-Regular.ttf');
+  font-weight: 400;
+}
+@font-face {
+  font-family: Della_Respira;
+  src: url('./assets/fonts/Della_Respira/DellaRespira-Regular.ttf');
+  font-weight: 400;
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin phone {
+  @media screen and (max-width: 729px) {
+    @content;
+  }
+}
+
+:root {
+  --fontB: Bellefair;
+  --fontD: Della_Respira;
+  --body-color: #fdede0;
+  --title-color: #ffead9;
+  --text-color: #e6a97e;
+  --hover-color: #ffead9;
+}
+
+body {
+  background-color: var(--body-color);
+  transition: 0.5s;
+}
+section {
+  padding: 0 20px;
+}
+
+// .main_wrapper {
+//   overflow: hidden;
+//   // @include tablet() {
+//   //   position: relative;
+//   //   overflow-x: clip;
+//   // }
+// }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1440px;
+  margin: 0 auto;
+  @include tablet() {
+    width: 100%;
+  }
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/img/main.jpg');
+  background-repeat: no-repeat;
+  transition: all 1s;
+
+  &_title {
+    color: var(--title-color);
+    font-family: var(--fontD);
+    font-style: normal;
+    // font-weight: bold;
+    font-size: 70px;
+    line-height: 120px;
+    transition: all 0.5s;
+    &:hover {
+      color: #99490f;
+      cursor: pointer;
+    }
+  }
+  &_btn {
+    position: absolute;
+    bottom: 0px;
+    width: 100px;
+    height: 100px;
+    background: none;
+    border: none;
+    transition: all 0.5s;
+    i {
+      font-size: 50px;
+      color: var(--title-color);
+    }
+  }
+}
+// Поисковик:
+
+* {
+  box-sizing: border-box;
+}
+.form {
+  display: none;
+  position: relative;
+  width: auto;
+  float: right;
+}
+.search_input {
+  width: 250px;
+  height: 42px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #e6a97e;
+  background: #f9f0da;
+  outline: none;
+  position: relative;
+  transition: 0.3s linear;
+  &::placeholder {
+    font-family: var(--fontB);
+    font-size: 20px;
+    color: var(--text-color);
+  }
+}
+input:focus {
+  width: 300px;
+}
+.search_btn {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  &:before {
+    content: '\f002';
+    font-family: FontAwesome;
+    color: #e6a97e;
+  }
+}
+//
+
+.results {
+  padding-top: 100px;
+  &_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      margin-right: 25px;
+      margin-bottom: 25px;
+      height: 290px;
+      width: 400px;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      @include tablet() {
+        margin-right: 0;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+.footer {
+  height: 100px;
+  display: flex;
+  background-color: #e6a97e;
+  font-family: var(--fontB);
+  font-size: 30px;
+  @include tablet() {
+    height: 150px;
+  }
+  .container {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+
+    @include tablet() {
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 31px;
+      margin-right: 20px;
+    }
+
+    .github {
+      display: flex;
+      align-items: center;
+
+      @include tablet() {
+        margin-top: 35px;
+        margin-bottom: 15px;
+      }
+      p {
+        text-decoration: none;
+        line-height: 50px;
+        color: var(--title-color);
+        margin-right: 20px;
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+        @include tablet() {
+          line-height: 0px;
+        }
+      }
+      &_link {
+        color: var(--title-color);
+        text-decoration: none;
+        line-height: 50px;
+        transition: 0.5s;
+        &:hover {
+          color: var(--hover-color);
+          text-decoration: underline;
+          transition: 0.2s;
+        }
+        @include tablet() {
+          line-height: 0px;
+        }
+      }
+    }
+
+    .rss {
+      margin-left: 19px;
+      &_logo {
+        width: 150px;
+        height: 75px;
+      }
+      // @include tablet() {
+      //   margin-bottom: 15px;
+      //   margin-left: 0px;
+      // }
+      // &_link {
+      //   text-decoration: none;
+      //   line-height: 50px;
+      //   color: var(--title-color);
+      //   transition: 0.5s;
+      //   &:hover {
+      //     color: var(--hover-color);
+      //     text-decoration: underline;
+      //     transition: 0.2s;
+      //   }
+      // }
+    }
+  }
+}

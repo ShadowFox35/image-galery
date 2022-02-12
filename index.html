@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Image-galery</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      type="Image/x-icon"
+      href="./assets/favicon.ico"
+      rel="icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/91fa1bd66f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main_wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header_title">IMAGE GALERY</div>
+          <div class="header_search">
+            <form class="form" onsubmit="return false">
+              <input
+                class="search_input"
+                type="search"
+                placeholder="Search..."
+                autocomplete="off"
+                autofocus="autofocus"
+                name="search"
+              />
+              <button
+                type="submit"
+                class="search_btn"
+              ></button>
+            </form>
+          </div>
+          <!-- <button class="header_btn">
+            <i class="fas fa-angle-double-up"></i>
+          </button> -->
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="container">
+          <section class="results">
+            <div class="results_wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1514518926461-30c892e455ee?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHw2fHxvcmFuZ2UlMjBjbG91ZHN8ZW58MHwwfHx8MTY0NDY5ODI1Ng&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1519370159120-226cb8b70f88?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHwxMHx8b3JhbmdlJTIwY2xvdWRzfGVufDB8MHx8fDE2NDQ2OTgxMDg&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1501898047706-55903296cd09?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHwyfHxvcmFuZ2UlMjBjbG91ZHN8ZW58MHwwfHx8MTY0NDY5ODI1Ng&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHw4fHxvcmFuZ2UlMjBjbG91ZHN8ZW58MHwwfHx8MTY0NDY5ODI1Ng&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1599442149625-c43691f0cd72?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHw5fHxvcmFuZ2UlMjBjbG91ZHN8ZW58MHwwfHx8MTY0NDY5ODI1Ng&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1526930481560-944d04605294?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHwxM3x8b3JhbmdlJTIwY2xvdWRzfGVufDB8MHx8fDE2NDQ2OTgyNTY&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1503602164195-4c69be2bf9b0?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHwxN3x8b3JhbmdlJTIwY2xvdWRzfGVufDB8MHx8fDE2NDQ2OTgyNTY&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHwyMXx8b3JhbmdlJTIwY2xvdWRzfGVufDB8MHx8fDE2NDQ3MDA0MDg&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1508948692984-c8b6b5175db2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwzMDA3NzR8MHwxfHNlYXJjaHwyNHx8b3JhbmdlJTIwY2xvdWRzfGVufDB8MHx8fDE2NDQ3MDA0MDg&ixlib=rb-1.2.1&q=85"
+                alt="the_beach"
+              />
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="github">
+            <p>©</p>
+            <p>2022</p>
+            <p>
+              <a
+                class="github_link"
+                target="_blank"
+                href="https://github.com/ShadowFox35"
+              >
+                ShadowFox35</a
+              >
+            </p>
+          </div>
+          <div class="rss">
+            <a target="blank" href="https://rs.school/js/"
+              ><img
+                class="rss_logo"
+                src="./assets/img/rs_school_js.png"
+                alt="rs_school_logo"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- <script type="module" src="./script.js"></script> -->
+    <script src="./script.js"></script>
+  </body>
+</html>
