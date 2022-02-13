@@ -59,7 +59,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1440px;
+  width: 1140px;
   margin: 0 auto;
   @include tablet() {
     width: 100%;
@@ -77,7 +77,7 @@ section {
   background-image: url('./assets/img/main.jpg');
   background-repeat: no-repeat;
   transition: all 1s;
-
+  z-index: 10;
   &_title {
     color: var(--title-color);
     font-family: var(--fontD);
@@ -87,10 +87,20 @@ section {
     line-height: 120px;
     transition: all 0.5s;
     &:hover {
-      color: #99490f;
+      color: #992f0f;
       cursor: pointer;
     }
   }
+  &_error {
+    display: none;
+    text-align: center;
+    font-style: italic;
+    color: var(--title-color);
+    font-size: 50px;
+    line-height: 50px;
+    transition: all 0.5s;
+  }
+
   &_btn {
     position: absolute;
     bottom: 0px;
@@ -107,19 +117,11 @@ section {
 }
 // Поисковик:
 
-* {
-  box-sizing: border-box;
-}
-.form {
-  display: none;
-  position: relative;
-  width: auto;
-  float: right;
-}
 .search_input {
   width: 250px;
   height: 42px;
   padding-left: 15px;
+  padding-right: 5px;
   border-radius: 42px;
   border: 2px solid #e6a97e;
   background: #f9f0da;
@@ -135,18 +137,29 @@ section {
 input:focus {
   width: 300px;
 }
+.form {
+  position: relative;
+}
 .search_btn {
-  width: 42px;
-  height: 42px;
   background: none;
   border: none;
   position: absolute;
-  top: 0px;
-  right: 0;
-  &:before {
-    content: '\f002';
-    font-family: FontAwesome;
-    color: #e6a97e;
+  top: 15px;
+  right: 35px;
+  color: #e6a97e;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.fa-xmark {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #e6a97e;
+  &:hover {
+    cursor: pointer;
   }
 }
 //
@@ -158,7 +171,7 @@ input:focus {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-
+    opacity: 0;
     img {
       margin-right: 25px;
       margin-bottom: 25px;
@@ -177,6 +190,9 @@ input:focus {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   height: 100px;
   display: flex;
   background-color: #e6a97e;
@@ -258,5 +274,148 @@ input:focus {
       //   }
       // }
     }
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: black; */
+  z-index: 1;
+  /* height:100vh;
+    width:100vw; */
+}
+
+.loader .l_main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 172px;
+  height: 128px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+.l_square {
+  position: relative;
+}
+
+.l_square:nth-child(1) {
+  margin-left: 0px;
+}
+
+.l_square:nth-child(2) {
+  margin-left: 44px;
+}
+
+.l_square:nth-child(3) {
+  margin-left: 88px;
+}
+
+.l_square:nth-child(4) {
+  margin-left: 132px;
+}
+
+.l_square span {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  height: 36px;
+  width: 36px;
+  border-radius: 2px;
+  background-color: #ffffff;
+}
+
+.l_square span:nth-child(1) {
+  top: 0px;
+}
+
+.l_square span:nth-child(2) {
+  top: 44px;
+}
+
+.l_square span:nth-child(3) {
+  top: 88px;
+}
+
+.l_square:nth-child(1) span {
+  animation: animsquare1 2s infinite ease-in;
+}
+
+.l_square:nth-child(2) span {
+  animation: animsquare2 2s infinite ease-in;
+}
+
+.l_square:nth-child(3) span {
+  animation: animsquare3 2s infinite ease-in;
+}
+
+.l_square:nth-child(4) span {
+  animation: animsquare4 2s infinite ease-in;
+}
+
+.l_square span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.l_square span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.l_square span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes animsquare1 {
+  0%,
+  5%,
+  95%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  30%,
+  70% {
+    transform: translate(-40px, 0px) rotate(-90deg);
+  }
+}
+
+@keyframes animsquare2 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  35%,
+  65% {
+    transform: translate(-40px, 0px) rotate(-90deg);
+  }
+}
+
+@keyframes animsquare3 {
+  0%,
+  15%,
+  85%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  40%,
+  60% {
+    transform: translate(-40px, 0px) rotate(-90deg);
+  }
+}
+
+@keyframes animsquare4 {
+  0%,
+  20%,
+  80%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  45%,
+  55% {
+    transform: translate(-40px, 0px) rotate(-90deg);
   }
 }
