@@ -1,4 +1,5 @@
 //    Сворачивание/разворачивание Header:
+
 const headerBtn = document.querySelector('.header_title');
 const header = document.querySelector('.header');
 const container = document.querySelector('.container');
@@ -22,7 +23,7 @@ headerBtn.onclick = function header_size() {
     form.style.display = 'flex';
     error.style.display = 'none';
     search_input.focus();
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'auto';
   } else {
     headerSize = 'full';
     header.style.height = '100vh';
@@ -32,7 +33,7 @@ headerBtn.onclick = function header_size() {
     container.style.justifyContent = 'center';
     headerBtn.style.fontSize = '70px';
     form.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = 'hidden';
   }
 };
 clear.onclick = function header_size() {
@@ -70,7 +71,7 @@ search_input.addEventListener('keydown', function enter(e) {
 });
 
 searchBtn.onclick = function () {
-  search(search_input.nodeValue);
+  search(search_input.value);
 };
 
 let status = 0;
@@ -82,22 +83,16 @@ async function search(value) {
       `https://api.unsplash.com/search/photos?query=${value}&per_page=10&orientation=landscape&client_id=Bpz6MYm0jc-mS2vcu3EhlC7DV4l1OsAp2l6UK4wmM94`
     );
     const data = await res.json();
-    let element = '';
-    for (let i = 1; i < 10; i++) {
-      element += `<img
-      src=${data.results[i].urls.full}
-      alt="image"
-      />`;
-      console.log(data.results[i].urls.full);
-    }
-    resultsImg.innerHTML = element;
-
+    image.forEach((elem, i) => {
+      elem.src = data.results[i].urls.full;
+    });
     resultsImg.style.opacity = 0;
     loader.style.display = 'block';
+    Load();
+    clearInterval(timerId);
     timerId = setInterval(loadInterval, 600);
     status = 0;
     errorStatus = false;
-    Load();
   } catch (error) {
     errorStatus = true;
     header_full();
@@ -106,7 +101,9 @@ async function search(value) {
 
 function Load() {
   image.forEach((elem) => {
-    elem.onload = imgLoaded;
+    if (elem.src) {
+      elem.onload = imgLoaded;
+    }
   });
 }
 
@@ -115,7 +112,6 @@ function imgLoaded() {
 }
 
 function loadInterval() {
-  console.log(status);
   if (status === 9) {
     resultsImg.style.opacity = 1;
     loader.style.display = 'none';

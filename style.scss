@@ -59,7 +59,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1140px;
+  width: 1290px;
   margin: 0 auto;
   @include tablet() {
     width: 100%;
@@ -138,6 +138,7 @@ input:focus {
   width: 300px;
 }
 .form {
+  display: none;
   position: relative;
 }
 .search_btn {
@@ -166,12 +167,12 @@ input:focus {
 
 .results {
   padding-top: 100px;
+  padding-bottom: 100px;
   &_wrapper {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    opacity: 0;
     img {
       margin-right: 25px;
       margin-bottom: 25px;
