@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Image-galery</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      type="Image/x-icon"
+      href="./assets/favicon.ico"
+      rel="icon"
+    />
+    <link rel="stylesheet" href="./assets/css/all.css" />
+  </head>
+  <body>
+    <div class="main_wrapper">
+      <header class="header">
+        <div class="container">
+          <div class="header_title">IMAGE GALERY</div>
+          <div class="header_error">
+            Ошибка 403 - превышен лимит запросов
+            <br />вернитесь, пожалуйста, позже
+          </div>
+          <div class="header_search">
+            <div class="form">
+              <input
+                class="search_input"
+                placeholder="Search..."
+                autocomplete="off"
+                autofocus="autofocus"
+                name="search"
+              />
+              <i class="fas fa-search search_btn"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="container">
+          <section class="results">
+            <div class="results_wrapper">
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+              <img alt="the_beach" class="image" />
+            </div>
+            <div class="loader">
+              <div class="l_main">
+                <div class="l_square">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="l_square">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="l_square">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="l_square">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="github">
+            <p>©</p>
+            <p>2022</p>
+            <p>
+              <a
+                class="github_link"
+                target="_blank"
+                href="https://github.com/ShadowFox35"
+              >
+                ShadowFox35</a
+              >
+            </p>
+          </div>
+          <div class="rss">
+            <a target="blank" href="https://rs.school/js/"
+              ><img
+                class="rss_logo"
+                src="./assets/img/rs_school_js.png"
+                alt="rs_school_logo"
+            /></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- <script type="module" src="./script.js"></script> -->
+    <script src="./script.js"></script>
+  </body>
+</html>
